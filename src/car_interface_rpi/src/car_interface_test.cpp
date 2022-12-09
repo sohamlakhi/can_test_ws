@@ -27,16 +27,18 @@ void car_interface_rpi_test::canTimerCallback(const ros::TimerEvent& event) {
 
         if (popped.steer == 100) {
             canObj.data_frame.data[0] = 0xBB;
+            canObj.data_frame.can_id = 0x10;
         }
 
         else if (popped.steer == 200) {
             canObj.data_frame.data[0] = 0xCC;
+            canObj.data_frame.can_id = 0x20;
         }
 
         
         canObj.data_frame.can_dlc = 2;
         canObj.data_frame.can_id = 0x20;
-        canObj.data_frame.data[0] = 0xFF;
+        // canObj.data_frame.data[0] = 0xFF;
         canObj.data_frame.data[1] = 0xAA;
         for (int i = 2; i<9; i++) {
             canObj.data_frame.data[i] = 0x00;
