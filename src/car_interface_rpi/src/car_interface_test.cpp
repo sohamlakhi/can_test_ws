@@ -36,7 +36,7 @@ void car_interface_rpi_test::canTimerCallback(const ros::TimerEvent& event) {
         }
 
         
-        canObj.data_frame.can_dlc = 2;
+        canObj.data_frame.can_dlc = 8;
         // canObj.data_frame.can_id = 0x20;
         // canObj.data_frame.data[0] = 0xFF;
         canObj.data_frame.data[1] = 0xAA;
